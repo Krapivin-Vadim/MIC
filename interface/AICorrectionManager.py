@@ -32,4 +32,5 @@ class AICorrectionManager:
         corrections: DroneLocationDto = self.corrector.correct(drone_location, frame_from_storage, frame_from_drone)
         if self.valid(drone_location, corrections):
             return corrections
+        self.mavros.set_drone_location(drone_location)
         return drone_location
