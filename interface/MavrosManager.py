@@ -8,3 +8,6 @@ class MavrosManager(Protocol):
 
     def get_drone_location(self) -> DroneLocationDto:
         pass
+
+    def set_drone_location(self, drone_location: DroneLocationDto) -> None:
+        pass
