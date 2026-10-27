@@ -1,19 +1,9 @@
 import torch
 import numpy as np
 import time
-from dataclasses import dataclass
+from dto.MatchResult import MatchResult
 from lightglue import LightGlue, SuperPoint
 from lightglue.utils import load_image
-
-
-@dataclass
-class MatchResult:
-    # Результат работы модели
-    points_frame: np.ndarray  # Точки на кадре дрона (N x 2 массив [x, y])
-    points_map: np.ndarray  # Соответствующие точки на карте (N x 2 массив [x, y])
-    scores: np.ndarray  # Оценки совпадений от LightGlue (N массив, от 0 до 1)
-    processing_time_ms: float  # Время обработки кадра в миллисекундах
-    num_matches: int  # Количество найденных совпадений
 
 
 class SuperPointLightGlueCorrector:
