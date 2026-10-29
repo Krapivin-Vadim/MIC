@@ -1,0 +1,25 @@
+model:
+  name: "loftr"          # "loftr" | "coarse_loftr" | "efficient_loftr"
+  conf_threshold: 0.5
+  min_matches: 8
+  max_size: 640
+
+geometry:
+  min_inliers: 8
+  ransac_thresh_px: 3.0
+
+filter:
+  map_scale_m_per_px: 0.5
+  max_drone_speed_mps: 20.0
+  max_time_gap_s: 10.0
+  vote_window: 7
+  vote_min_agree: 4
+  vote_radius_m: 30.0
+
+map:
+  type: "geotiff"                   # "jpg" | "geotiff" | "mbtiles"
+  path: "data/map/alferyevo_bing_700m_utm36n.tif"
+  zoom: 18
+
+io:
+  output_dir: "output"
